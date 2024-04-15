@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ticket_management',
+    'ticket_app',
     'rest_authtoken',
     'rest_framework',
 ]
