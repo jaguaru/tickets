@@ -21,3 +21,9 @@ class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
         fields = ['id', 'num_images', 'user', 'status', 'created_at', 'images']
+
+
+class TicketStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ticket
+        fields = ['id', 'user', 'status']
