@@ -34,13 +34,9 @@ Install the required packages
 
     (vserver) $ pip install -r requirements.txt
 
-Go to the script/ folder
+Run the server
 
-    (vserver) $ cd script
-
-Run the data_script.py script
-
-    (vserver) $ python3 data_script.py
+    (vserver) $ python3 manage.py runserver
 
 
 
