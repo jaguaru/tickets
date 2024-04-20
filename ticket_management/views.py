@@ -1,7 +1,5 @@
 import base64
 
-from django.shortcuts import get_object_or_404
-
 from rest_framework import status, serializers, permissions
 from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
@@ -27,11 +25,6 @@ def create_new_ticket(request):
         return Response({ 'ticket_id': ticket.id, 'status': ticket.status }, status=status.HTTP_201_CREATED)
     else:
         return Response({ 'error': 'Número de imágenes no proporcionado' }, status=status.HTTP_400_BAD_REQUEST)
-
-
-def verify_owner(user_id, ticket_id):
-    ticket = get_object_or_404(Ticket, id=ticket_id)
-    return ticket.user_id == user_id
 
 
 @api_view(['POST'])
