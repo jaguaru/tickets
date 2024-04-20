@@ -30,6 +30,30 @@ def create_new_ticket(request):
         return Response({ 'error': 'Número de imágenes no proporcionado' }, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated, IsTicketOwner])
+def monitoring_ticket_status(request):
+
+    ticket_id = request.data['ticket_id']
+    user_id = request.user.id
+    user_is_owner = verify_owner(user_id, ticket_id)
+
+    if user_is_owner:
+
+        try:
+            ticket = get_object_or_404(Ticket, id=ticket_id, user_id=user_id)
+            ticket_serializer = TicketSerializer(ticket)
+ 
+            return Response(ticket_serializer.data)
+
+        except Ticket.DoesNotExist:
+            return Response({ 'error': 'Ticket no encontrado!' }, status=status.HTTP_404_NOT_FOUND)
+    
+    else:
+        return Response({ 'error': 'No puedes usar este ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
+
+
 @api_view(['POST'])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
