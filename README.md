@@ -1,6 +1,6 @@
 # TicketApp ticket management to upload images in the cloud
 
-TicketApp is a REST API application built with Django. This allows users to upload images asynchronously to the cloud through ticket management.
+TicketApp is a REST API application built with Django. This allows users to upload images asynchronously to the cloud, through ticket management, using the Cloudinary service. The transaction data, Tickets and Images uploaded, are saved in PostgreSQL.
 
 
 # Firt steps:
