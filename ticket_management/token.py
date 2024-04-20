@@ -42,7 +42,7 @@ def user_login(request):
     token, created = Token.objects.get_or_create(user=user)
     serializer = UserDataSerializer(instance=user)
 
-    return Response({ "token": token.key, "user": serializer.data }, status=status.HTTP_200_OK)
+    return Response({ "message": "Welcome, you have logged in correctly!", "token": token.key, "user": serializer.data }, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
