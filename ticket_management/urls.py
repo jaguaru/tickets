@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/auth/token/login', token.user_login),
+    path('api/auth/token/register', token.user_register),
 
 ]
