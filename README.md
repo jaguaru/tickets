@@ -37,7 +37,7 @@ Virtual environment activated:
 
 Install the required packages:
 
-    (vserver) $ pip install -r requirements.txt
+    (django_venv) $ pip install -r requirements.txt
 
 Make the migration process
 
@@ -47,7 +47,7 @@ Make the migration process
 
 Run the Django server:
 
-    (vserver) $ python3 manage.py runserver
+    (django_venv) $ python3 manage.py runserver
 
 In the same directory open a second window console activate another virtual environment:
 
@@ -55,7 +55,7 @@ In the same directory open a second window console activate another virtual envi
 
 Run the Celery server
 
-    (vserver) $ celery -A ticket_management worker -l info
+    (django_venv) $ celery -A ticket_management worker -l info
 
 Now that we have the Django and Celery server activated, we can use the REST API endpoints.
 
