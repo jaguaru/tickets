@@ -1,3 +1,5 @@
+from django.shortcuts import get_object_or_404
+
 from rest_framework import status, serializers, permissions
 from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
@@ -7,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from .models import Ticket, Image
-from .my_cloudinary import save_cloud_image, save_cloud_image_wait
+from .my_cloudinary import save_cloud_image_wait
 
 
 @api_view(['POST'])
