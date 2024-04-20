@@ -28,5 +28,6 @@ urlpatterns = [
     path('api/auth/token/profile', token.user_profile),
 
     path('api/tickets/create_ticket', views.create_new_ticket),
+    path('api/tickets/upload_cloud_image', views.upload_cloudinary_image),
 
 ]
