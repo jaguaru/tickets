@@ -137,3 +137,19 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Celery Configuration
+CELERY_BROKER_URL = get_env_var['BROKER_URL']
+CELERY_RESULT_BACKEND = get_env_var['RESULT_BACKEND']
+
+CELERY_TASK_DEFAULT_QUEUE = 'default'
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+CELERY_REDIRECT_STDOUTS = get_env_var['REDIRECT_STDOUTS']
+
+CELERY_BROKER_CONNECTION_RETRY = get_env_var['CONNECTION_RETRY']
+CELERY_BROKER_CONNECTION_MAX_RETRIES = int(get_env_var['CONNECTION_MAX_RETRIES'])
+CELERY_BROKER_CONNECTION_RETRY_INTERVAL = int(get_env_var['CONNECTION_RETRY_INTERVAL'])
