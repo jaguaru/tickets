@@ -13,7 +13,6 @@ class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
         fields = ['id', 'image_name', 'image_url', 'uploaded_at']
-        #fields = '__all__'
 
 
 class TicketSerializer(serializers.ModelSerializer):
@@ -22,4 +21,3 @@ class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
         fields = ['id', 'num_images', 'user', 'status', 'created_at', 'images']
-        #fields = '__all__'
