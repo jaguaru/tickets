@@ -87,3 +87,50 @@ def upload_cloudinary_image(request):
     
     else:
         return Response({ 'error': 'No puedes usar este ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
+
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def tickets_paginated(request):
+
+    user_id = request.user.id
+    ticket_id = request.data['ticket_id']
+
+    user_is_owner = verify_owner(user_id, ticket_id)
+
+    if user_is_owner:
+
+        tickets = Ticket.objects.all()
+        ticket_serializer = TicketSerializer(tickets, many=True)
+        
+        page_number = request.GET.get('page', 1)
+        page_size = request.GET.get('page_size', 10)
+        start_date = request.GET.get('start_date', None)
+        end_date = request.GET.get('end_date', None)
+        status = request.GET.get('status', None)
+
+        try:
+            if start_date:
+                start_date = datetime.strptime(start_date, '%Y-%m-%d')
+
+            if end_date:
+                end_date = datetime.strptime(end_date, '%Y-%m-%d')
+
+            paginated_data = paginate_ticket_data(ticket_serializer.data, page_number, page_size, start_date, end_date, status)
+
+            paginated_data_serializable = list(paginated_data.object_list)
+
+            ticket_data = { 
+                            'tickets': paginated_data_serializable, 
+                            'current_page': paginated_data.number, 
+                            'total_pages': paginated_data.paginator.num_pages
+                          }
+
+            return Response(ticket_data)
+
+        except Ticket.DoesNotExist:
+            return Response({'error': 'No se encontró el ticket para este usuario'}, status=status.HTTP_404_NOT_FOUND)
+
+    else:
+        return Response({ 'error': 'No puedes ver este ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
