@@ -12,6 +12,7 @@ from .models import Ticket, Image
 from .my_cloudinary import save_cloud_image_wait
 from .utils import verify_owner
 from .pagination import paginate_ticket_data
+from .serializers import TicketSerializer
 
 
 @api_view(['POST'])
