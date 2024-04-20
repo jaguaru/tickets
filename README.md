@@ -56,7 +56,7 @@ This REST API consists of two sections, the first is for user authentication and
 
 User Autentication
 
-The first step is to visit this URL with Postman or another similar application to make http requests
+The first step is to visit this URL with Postman or another similar application to make http requests. You
 
     $ http://127.0.0.1:8000/api/auth/token/login
 
@@ -73,8 +73,7 @@ The first step is to visit this URL with Postman or another similar application 
             "user": {
                 "id": 3,
                 "username": "test_dos",
-                "email": "test_dos@outlook.com",
-                "password": "pbkdf2_sha256$720000$mJYyGaeEYlC0yP8Mhn0EkJ$8EvycG5mgUTN+xeRYsopMbiYYfhNNcksBVCPOIhzZv4="
+                "email": "test_dos@outlook.com"
             }
         }
 
