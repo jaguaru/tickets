@@ -10,7 +10,7 @@ def paginate_ticket_data(serializer_data, page_number, page_size, start_date=Non
     if status:
         serializer_data = [item for item in serializer_data if item['status'] == status]
     
-    paginator = Paginator(filtered_data, page_size)
+    paginator = Paginator(serializer_data, page_size)
     
     try:
         paginated_data = paginator.page(page_number)
