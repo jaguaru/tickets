@@ -73,6 +73,7 @@ The first step is to visit this URL with Postman or another similar application 
     URL: http://127.0.0.1:8000/api/auth/token/login
     Method: POST
     Body:
+
         {
             "email": "test_dos@outlook.com",
             "username": "test_dos",
@@ -91,15 +92,73 @@ The first step is to visit this URL with Postman or another similar application 
         }
 
     
-    
-    $ http://127.0.0.1:8000/api/auth/token/register
-    
-    $ http://127.0.0.1:8000/api/auth/token/profile
+    Request: http://127.0.0.1:8000/api/auth/token/register
 
-    $ http://127.0.0.1:8000/api/tickets/upload_cloud_image
+    URL: 
+    Method: POST
+    Body:
 
-    $ http://127.0.0.1:8000/api/tickets/tickets_paginated
-
-    $ http://127.0.0.1:8000/api/tickets/check_ticket_status
+    Response
     
-    $ http://127.0.0.1:8000/api/tickets/ticket_details
+
+
+
+    Request: http://127.0.0.1:8000/api/auth/token/profile
+
+    URL: 
+    Method: POST
+    Body:
+
+    Response
+    
+    
+    
+    
+    Request: http://127.0.0.1:8000/api/tickets/upload_cloud_image
+
+    URL: 
+    Method: POST
+    Body:
+
+    Response
+    
+    
+
+    
+    Request: http://127.0.0.1:8000/api/tickets/tickets_paginated
+
+    URL: 
+    Method: POST
+    Body:
+
+    Response
+    
+    
+    
+
+    Request: http://127.0.0.1:8000/api/tickets/check_ticket_status
+
+    URL: 
+    Method: POST
+    Body:
+
+    Response
+
+
+
+
+    Request: http://127.0.0.1:8000/api/tickets/ticket_details
+
+    URL: 
+    Method: POST
+    Body:
+
+    Response
+
+    
+
+    
+
+    
+    
+    
