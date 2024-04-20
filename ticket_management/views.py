@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from .models import Ticket, Image
+from .my_cloudinary import save_cloud_image, save_cloud_image_wait
 
 
 @api_view(['POST'])
