@@ -53,7 +53,7 @@ def user_profile(request):
     serializer = UserSerializer(instance=request.user)
     
     user_data = serializer.data
-    id = user_data['id']  # request.user.id
+    id = user_data['id']
     user = user_data['username']
     email = user_data['email']
 
