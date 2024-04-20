@@ -69,8 +69,9 @@ The first step is to visit this URL with Postman or another similar application 
     Body:
 
         {
-            "username": "test_dos@outlook.com",
-            "password": "Jaguar12345"
+            "username": "test_dos",
+            "password": "Jaguar12345",
+            "email": "test_dos@outlook.com"
         }
 
     Response:
@@ -79,9 +80,9 @@ The first step is to visit this URL with Postman or another similar application 
             "token": "ad5b5c5086e5b64d55e35650f769370991b87c9f",
             "user": {
                 "id": 1375,
-                "username": "test_dos@outlook.com",
-                "email": "",
-                "password": "asdf4"
+                "username": "test_dos",
+                "email": "test_dos@outlook.com",
+                "password": "asdfasdfasdfadf"
             }
         }
 
