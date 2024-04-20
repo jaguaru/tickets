@@ -103,6 +103,7 @@ The first step is to get an application, such as Postman or another similar appl
     Response:
 
         {
+            "message": "Welcome, you have logged in correctly!",
             "token": "fa24b09db3cf450a3780b0c95124aa94ea8f77d2",
             "user": {
                 "id": 3,
