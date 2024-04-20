@@ -14,7 +14,7 @@ from .models import Ticket, Image
 from .my_cloudinary import save_cloud_image_wait
 from .utils import verify_owner
 from .pagination import paginate_ticket_data
-from .serializers import TicketSerializer
+from .serializers import TicketSerializer, TicketStatusSerializer
 
 
 @api_view(['POST'])
@@ -45,7 +45,7 @@ def monitoring_ticket_status(request):
 
         try:
             ticket = get_object_or_404(Ticket, id=ticket_id, user_id=user_id)
-            ticket_serializer = TicketSerializer(ticket)
+            ticket_serializer = TicketStatusSerializer(ticket)
  
             return Response(ticket_serializer.data)
 
