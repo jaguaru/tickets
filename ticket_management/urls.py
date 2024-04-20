@@ -25,5 +25,6 @@ urlpatterns = [
 
     path('api/auth/token/login', token.user_login),
     path('api/auth/token/register', token.user_register),
+    path('api/auth/token/profile', token.user_profile),
 
 ]
