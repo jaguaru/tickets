@@ -29,5 +29,6 @@ urlpatterns = [
 
     path('api/tickets/create_ticket', views.create_new_ticket),
     path('api/tickets/upload_cloud_image', views.upload_cloudinary_image),
+    path('api/tickets/tickets_paginated', views.tickets_paginated),
 
 ]
