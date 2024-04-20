@@ -130,13 +130,12 @@ The first step is to get an application, such as Postman or another similar appl
         {
             "message": "You are logged as test_tres. User data: ID = 4, USERNAME = test_tres, EMAIL = test_tres@outlook.com."
         }
+        
+### User Profile:
     
-    
-    
-    
-    Request: http://127.0.0.1:8000/api/tickets/upload_cloud_image
+    Request:
 
-    URL: 
+    URL: http://127.0.0.1:8000/api/tickets/upload_cloud_image
     Method: POST
     Body:
 
@@ -145,9 +144,9 @@ The first step is to get an application, such as Postman or another similar appl
     
 
     
-    Request: http://127.0.0.1:8000/api/tickets/tickets_paginated
+    Request:
 
-    URL: 
+    URL: http://127.0.0.1:8000/api/tickets/tickets_paginated
     Method: POST
     Body:
 
@@ -156,9 +155,9 @@ The first step is to get an application, such as Postman or another similar appl
     
     
 
-    Request: http://127.0.0.1:8000/api/tickets/check_ticket_status
+    Request:
 
-    URL: 
+    URL: http://127.0.0.1:8000/api/tickets/check_ticket_status
     Method: POST
     Body:
 
@@ -167,9 +166,9 @@ The first step is to get an application, such as Postman or another similar appl
 
 
 
-    Request: http://127.0.0.1:8000/api/tickets/ticket_details
+    Request:
 
-    URL: 
+    URL: http://127.0.0.1:8000/api/tickets/ticket_details
     Method: POST
     Body:
 
