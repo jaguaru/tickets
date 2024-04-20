@@ -12,7 +12,7 @@ TicketApp es una aplicación API REST creada con Django. Esta permite a los usua
 
 Open the tickets directory:
 
-    $ cd tickets-main
+    $ cd tickets
 
 Create the directory for the virtual environment:
 
@@ -20,7 +20,7 @@ Create the directory for the virtual environment:
 
 Create the virtual environment:
 
-    $ virtualenv -p python3 django_venv
+    $ python3 -m venv django_venv
 
 Activate the virtual environment:
 
@@ -30,8 +30,17 @@ Virtual environment activated:
 
     (django_venv) $
 
+Install the required packages
 
+    (vserver) $ pip install -r requirements.txt
 
+Go to the script/ folder
+
+    (vserver) $ cd script
+
+Run the data_script.py script
+
+    (vserver) $ python3 data_script.py
 
 
 
