@@ -127,7 +127,9 @@ The first step is to get an application, such as Postman or another similar appl
         }
 
     Response:
-        "You are logged as test_tres. User data: ID = 4, USERNAME = test_tres, EMAIL = test_tres@outlook.com."
+        {
+            "message": "You are logged as test_tres. User data: ID = 4, USERNAME = test_tres, EMAIL = test_tres@outlook.com."
+        }
     
     
     
