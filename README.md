@@ -66,7 +66,17 @@ This REST API consists of two sections, the first is for user authentication and
 
 User Autentication
 
-The first step is to visit this URL with Postman or another similar application to make http requests. You
+The first step is to visit this URL with Postman or another similar application to make http requests.
+
+    Request: http://127.0.0.1:8000/api/auth/token/register
+
+    URL: 
+    Method: POST
+    Body:
+
+    Response:
+
+
 
     Request:
 
@@ -92,13 +102,7 @@ The first step is to visit this URL with Postman or another similar application 
         }
 
     
-    Request: http://127.0.0.1:8000/api/auth/token/register
 
-    URL: 
-    Method: POST
-    Body:
-
-    Response
     
 
 
