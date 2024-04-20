@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from ticket_management import token
+from ticket_management import token, views
 
 
 urlpatterns = [
@@ -26,5 +26,7 @@ urlpatterns = [
     path('api/auth/token/login', token.user_login),
     path('api/auth/token/register', token.user_register),
     path('api/auth/token/profile', token.user_profile),
+
+    path('api/tickets/create_ticket', views.create_new_ticket),
 
 ]
