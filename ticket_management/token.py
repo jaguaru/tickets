@@ -40,3 +40,18 @@ def user_register(request):
         return Response({ 'token': token.key, "user": serializer.data }, status=status.HTTP_201_CREATED)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def user_profile(request):
+    
+    serializer = UserSerializer(instance=request.user)
+    
+    user_data = serializer.data
+    id = user_data['id']  # request.user.id
+    user = user_data['username']
+    email = user_data['email']
+
+    return Response("You are logged as {}. User data: ID = {}, USERNAME = {}, EMAIL = {}.".format(user, id, user, email), status=status.HTTP_200_OK)
