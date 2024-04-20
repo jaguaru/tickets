@@ -10,12 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-<<<<<<< HEAD
 from dotenv import dotenv_values
 get_env_var = dotenv_values()
 
-=======
->>>>>>> main
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,17 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
 SECRET_KEY = get_env_var['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = get_env_var['DEBUG']
-=======
-SECRET_KEY = 'django-insecure-uxe7xzgff57=%&^#y#h^wi2#kgxq*9k(q3t)t=dom0d_h2qa**'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
->>>>>>> main
 
 ALLOWED_HOSTS = []
 
@@ -51,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-<<<<<<< HEAD
     'ticket_management',
     
     'rest_framework',
@@ -60,12 +49,6 @@ INSTALLED_APPS = [
     'celery',
     'cloudinary',
 
-=======
-    'ticket_app',
-
-    'rest_framework',
-    'rest_framework.authtoken',
->>>>>>> main
 ]
 
 MIDDLEWARE = [
@@ -104,17 +87,12 @@ WSGI_APPLICATION = 'ticket_management.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': get_env_var['NAME'],
         'USER': get_env_var['USER'],
         'PASSWORD': get_env_var['PASS'],
         'HOST': get_env_var['HOST'],
         'PORT': int(get_env_var['PORT']),
-=======
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
->>>>>>> main
     }
 }
 
@@ -159,7 +137,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
 
 # Celery Configuration
 CELERY_BROKER_URL = get_env_var['BROKER_URL']
@@ -176,5 +153,3 @@ CELERY_REDIRECT_STDOUTS = get_env_var['REDIRECT_STDOUTS']
 CELERY_BROKER_CONNECTION_RETRY = get_env_var['CONNECTION_RETRY']
 CELERY_BROKER_CONNECTION_MAX_RETRIES = int(get_env_var['CONNECTION_MAX_RETRIES'])
 CELERY_BROKER_CONNECTION_RETRY_INTERVAL = int(get_env_var['CONNECTION_RETRY_INTERVAL'])
-=======
->>>>>>> main
