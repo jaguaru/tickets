@@ -62,14 +62,28 @@ User Autentication
 
 The first step is to visit this URL with Postman or another similar application to make http requests.
 
-    Request: http://127.0.0.1:8000/api/auth/token/register
+    Request:
 
-    URL: 
+    URL: http://127.0.0.1:8000/api/auth/token/register
     Method: POST
     Body:
 
+        {
+            "username": "test_dos@outlook.com",
+            "password": "Jaguar12345"
+        }
+
     Response:
 
+        {
+            "token": "ad5b5c5086e5b64d55e35650f769370991b87c9f",
+            "user": {
+                "id": 1375,
+                "username": "test_dos@outlook.com",
+                "email": "",
+                "password": "asdf4"
+            }
+        }
 
 
     Request:
