@@ -38,7 +38,7 @@ def verify_owner(user_id, ticket_id):
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def upload_cloudinary_image(request):
-
+    
     request_json_data = request.data
 
     ticket_id = request_json_data['ticket_id']
@@ -89,7 +89,7 @@ def upload_cloudinary_image(request):
                 image = Image.objects.create(ticket=ticket, image_name=image_name_ext, image_url=cloud_url)
         
             except Exception as _except:
-                return Response({ 'error': 'A ocurrido un error. {}'.format(_except) }, status=status.HTTP_400_BAD_REQUEST)
+                return Response({ 'error': '{}'.format(_except) }, status=status.HTTP_400_BAD_REQUEST)
         
         return Response({ 'message': 'Las imagenes se subieron correctamente!' }, status=status.HTTP_200_OK)
     
