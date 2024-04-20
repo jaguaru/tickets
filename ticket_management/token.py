@@ -1,4 +1,4 @@
-from .serializers import UserSerializer
+from .serializers import UserRegisterSerializer, UserDataSerializer
 
 from rest_framework import status
 from rest_framework.authtoken.models import Token
@@ -21,7 +21,7 @@ def user_login(request):
         return Response({ "error": "Invalid password" }, status=status.HTTP_400_BAD_REQUEST)
     
     token, created = Token.objects.get_or_create(user=user)
-    serializer = UserSerializer(instance=user)
+    serializer = UserDataSerializer(instance=user)
 
     return Response({ "token": token.key, "user": serializer.data }, status=status.HTTP_200_OK)
 
@@ -29,7 +29,7 @@ def user_login(request):
 @api_view(['POST'])
 def user_register(request):
 
-    serializer = UserSerializer(data=request.data)
+    serializer = UserRegisterSerializer(data=request.data)
 
     if serializer.is_valid():
         serializer.save()
@@ -50,7 +50,7 @@ def user_register(request):
 @permission_classes([IsAuthenticated])
 def user_profile(request):
     
-    serializer = UserSerializer(instance=request.user)
+    serializer = UserDataSerializer(instance=request.user)
     
     user_data = serializer.data
     id = user_data['id']
