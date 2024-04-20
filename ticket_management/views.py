@@ -32,7 +32,7 @@ def create_new_ticket(request):
 
 @api_view(['GET'])
 @authentication_classes([TokenAuthentication])
-@permission_classes([IsAuthenticated, IsTicketOwner])
+@permission_classes([IsAuthenticated])
 def monitoring_ticket_status(request):
 
     ticket_id = request.data['ticket_id']
