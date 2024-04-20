@@ -17,3 +17,5 @@ def paginate_ticket_data(serializer_data, page_number, page_size, start_date=Non
     
     except EmptyPage:
         paginated_data = paginator.page(paginator.num_pages)
+
+    return paginated_data
