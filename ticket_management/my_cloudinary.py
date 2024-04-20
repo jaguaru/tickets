@@ -19,7 +19,7 @@ import cloudinary.api
 
 
 @shared_task
-def save_cloud_image(image_file):
+def save_cloud_image(image_bytes):
     try:
         with BytesIO(image_bytes) as image_file:
             return cloudinary.uploader.upload(image_file)
