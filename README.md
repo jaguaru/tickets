@@ -61,6 +61,7 @@ This REST API consists of two sections, the first is for user authentication and
 The first step is to get an app like Postman or another similar application to make local and remote http requests.
 
 
+### User Register: To interact with the application, the first thing we must do is create a user with the following data: username, password and email.
 
     Request:
 
