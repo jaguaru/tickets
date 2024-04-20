@@ -58,9 +58,9 @@ Now that we have the Django and Celery server activated, we can use the REST API
 
 This REST API consists of two sections, the first is for user authentication and the second is for managing tickets and uploading images to the cloud.
 
-User Autentication
+The first step is to get an app like Postman or another similar application to make local and remote http requests.
 
-The first step is to visit this URL with Postman or another similar application to make http requests.
+
 
     Request:
 
