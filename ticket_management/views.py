@@ -69,7 +69,7 @@ def all_ticket_details(request):
 
         try:
             ticket = get_object_or_404(Ticket, id=ticket_id, user_id=user_id)
-            ticket_serializer = TicketSerializer(ticket)
+            ticket_serializer = TicketImageSerializer(ticket)
  
             return Response(ticket_serializer.data)
 
