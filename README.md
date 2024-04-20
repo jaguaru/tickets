@@ -39,12 +39,6 @@ Install the required packages:
 
     (django_venv) $ pip install -r requirements.txt
 
-Make the migration process
-
-    $ python3 manage.py makemigrations
-
-    $ python3 manage.py migrate
-
 Run the Django server:
 
     (django_venv) $ python3 manage.py runserver
