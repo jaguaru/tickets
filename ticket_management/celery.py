@@ -15,9 +15,9 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 
 app.conf.result_backend = 'celery.backends.logging.LoggingResultBackend'
 
-app.conf.worker_concurrency = get_env_var['WORKER_CONCURRENCY']
-app.conf.worker_prefetch_multiplier = get_env_var['WORKER_PREFETCH_MULTIPLIER']
-app.conf.worker_max_tasks_per_child = get_env_var['WORKER_MAX_TASKS_PER_CHILD']
+app.conf.worker_concurrency = int(get_env_var['WORKER_CONCURRENCY'])
+app.conf.worker_prefetch_multiplier = int(get_env_var['WORKER_PREFETCH_MULTIPLIER'])
+app.conf.worker_max_tasks_per_child = int(get_env_var['WORKER_MAX_TASKS_PER_CHILD'])
 
 app.conf.worker_max_memory_per_child = int(get_env_var['MAX_MEMORY_PER_CHILD'])
 app.conf.worker_max_memory_per_worker = int(get_env_var['MAX_MEMORY_PER_WORKER'])
