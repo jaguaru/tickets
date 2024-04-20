@@ -33,9 +33,7 @@ def create_new_ticket(request):
 @permission_classes([IsAuthenticated])
 def upload_cloudinary_image(request):
     
-    request_json_data = request.data
-
-    ticket_id = request_json_data['ticket_id']
+    ticket_id = request.data['ticket_id']
     ticket = Ticket.objects.get(id=ticket_id)
 
     user_id = request.user.id
@@ -43,10 +41,10 @@ def upload_cloudinary_image(request):
 
     if user_is_owner:
 
-        if 'ticket_id' not in request_json_data:
+        if 'ticket_id' not in request.data:
             return JsonResponse({ 'error': 'No se encontro el ticket_id' }, status=status.HTTP_400_BAD_REQUEST)
 
-        if 'images' not in request_json_data:
+        if 'images' not in request.data:
             return JsonResponse({ 'error': 'No se encontraron imagenes en el json' }, status=status.HTTP_400_BAD_REQUEST)
 
         max_num_images = ticket.num_images
@@ -64,7 +62,7 @@ def upload_cloudinary_image(request):
         if num_uploaded_images >= max_num_images:
             return Response({ 'error': 'Se ha alcanzado el límite de imágenes para este ticket' }, status=status.HTTP_409_CONFLICT)
         
-        images_list = request_json_data.get('images')
+        images_list = request.data.get('images')
 
         for num, images in zip(reversed(range(total_to_upload)), images_list):
 
