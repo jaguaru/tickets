@@ -130,9 +130,29 @@ The first step is to get an application, such as Postman or another similar appl
         {
             "message": "You are logged as test_tres. User data: ID = 4, USERNAME = test_tres, EMAIL = test_tres@outlook.com."
         }
-        
-### User Profile:
+
+## IMPORTANT: In order to use the Ticket creation section you need to have logged in previously.
+
+### Create Ticket: To use this section you have to be logged in an 
     
+    Request:
+
+    URL: http://127.0.0.1:8000/api/tickets/create_ticket
+    Method: POST
+    Body:
+
+        {
+            "num_images": 7
+        }
+
+    Response
+
+        {
+            "ticket_id": 94,
+            "status": "pending"
+        }
+
+
     Request:
 
     URL: http://127.0.0.1:8000/api/tickets/upload_cloud_image
