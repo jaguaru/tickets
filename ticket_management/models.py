@@ -15,6 +15,7 @@ class Ticket(models.Model):
     class Meta:
         db_table = 'ticket'
 
+
 class Image(models.Model):
     ticket = models.ForeignKey(Ticket, related_name='images', on_delete=models.CASCADE)
     image_name = models.CharField(max_length=100)
