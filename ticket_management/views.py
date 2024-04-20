@@ -174,9 +174,9 @@ def tickets_paginated(request):
             paginated_data_serializable = list(paginated_data.object_list)
 
             ticket_data = { 
-                            'tickets': paginated_data_serializable, 
                             'current_page': paginated_data.number, 
-                            'total_pages': paginated_data.paginator.num_pages
+                            'total_pages': paginated_data.paginator.num_pages,
+                            'tickets': paginated_data_serializable
                           }
 
             return Response(ticket_data)
