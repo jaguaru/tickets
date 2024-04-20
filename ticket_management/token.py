@@ -57,4 +57,4 @@ def user_profile(request):
     user = user_data['username']
     email = user_data['email']
 
-    return Response("You are logged as {}. User data: ID = {}, USERNAME = {}, EMAIL = {}.".format(user, id, user, email), status=status.HTTP_200_OK)
+    return Response({ "message": "You are logged as {}. User data: ID = {}, USERNAME = {}, EMAIL = {}.".format(user, id, user, email) }, status=status.HTTP_200_OK)
