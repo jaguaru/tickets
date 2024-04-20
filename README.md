@@ -77,7 +77,7 @@ The first step is to get an application, such as Postman or another similar appl
     Response:
 
         {
-            "token": "ad5b5c5086e5b64d55e35650f769370991b87c9f",
+            "token": "fa24b09db3cf450a3780b0c95124aa94ea8f77d2",
             "user": {
                 "id": 1375,
                 "username": "test_dos",
@@ -86,6 +86,7 @@ The first step is to get an application, such as Postman or another similar appl
             }
         }
 
+### User Login: In this section we need to put the data entered in the previous step.
 
     Request:
 
@@ -94,9 +95,9 @@ The first step is to get an application, such as Postman or another similar appl
     Body:
 
         {
-            "email": "test_dos@outlook.com",
             "username": "test_dos",
-            "password": "Jaguar12345"
+            "password": "Jaguar12345",
+            "email": "test_dos@outlook.com"
         }
     
     Response:
@@ -110,19 +111,22 @@ The first step is to get an application, such as Postman or another similar appl
             }
         }
 
-    
+### User Profile: In this section we can see our profile data in an easier to read way.
 
-    
+    Request:
 
-
-
-    Request: http://127.0.0.1:8000/api/auth/token/profile
-
-    URL: 
+    URL: http://127.0.0.1:8000/api/auth/token/profile
     Method: POST
     Body:
 
-    Response
+        {
+            "username": "test_dos",
+            "password": "Jaguar12345",
+            "email": "test_dos@outlook.com"
+        }
+
+    Response:
+        "You are logged as test_tres. User data: ID = 4, USERNAME = test_tres, EMAIL = test_tres@outlook.com."
     
     
     
