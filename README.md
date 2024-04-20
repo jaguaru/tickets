@@ -2,13 +2,16 @@
 
 TicketApp is a REST API application built with Django. This allows users to upload images asynchronously to the cloud through ticket management.
 
+
 # Firt steps:
+
 
 ### Dowload the repository:
 
 Open a window console and type
 
     $ git clone https://github.com/jaguaru/tickets.git
+
 
 ## Setting up the virtual environment:
 
@@ -36,6 +39,12 @@ Install the required packages:
 
     (vserver) $ pip install -r requirements.txt
 
+Make the migration process
+
+    $ python3 manage.py makemigrations
+
+    $ python3 manage.py migrate
+
 Run the Django server:
 
     (vserver) $ python3 manage.py runserver
@@ -50,6 +59,7 @@ Run the Celery server
 
 Now that we have the Django and Celery server activated, we can use the REST API endpoints.
 
+
 # Interacting with the REST API
 
 This REST API consists of two sections, the first is for user authentication and the second is for managing tickets and uploading images to the cloud.
@@ -58,8 +68,9 @@ User Autentication
 
 The first step is to visit this URL with Postman or another similar application to make http requests. You
 
-    $ http://127.0.0.1:8000/api/auth/token/login
+    Request:
 
+    URL: http://127.0.0.1:8000/api/auth/token/login
     Method: POST
     Body:
         {
@@ -67,7 +78,9 @@ The first step is to visit this URL with Postman or another similar application 
             "username": "test_dos",
             "password": "Jaguar12345"
         }
+    
     Response:
+
         {
             "token": "fa24b09db3cf450a3780b0c95124aa94ea8f77d2",
             "user": {
