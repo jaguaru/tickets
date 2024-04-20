@@ -13,4 +13,3 @@ class ImageAdmin(admin.ModelAdmin):
 
 admin.site.register(Ticket, TicketAdmin)
 admin.site.register(Image, ImageAdmin)
-
