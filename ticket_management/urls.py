@@ -23,6 +23,6 @@ from ticket_management import token
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('api/', token.user_login),
+    path('api/auth/token/login', token.user_login),
 
 ]
