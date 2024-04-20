@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, re_path
 
 from ticket_management import token, views
@@ -33,4 +34,10 @@ urlpatterns = [
     path('api/tickets/check_ticket_status', views.monitoring_ticket_status),
     path('api/tickets/ticket_details', views.all_ticket_details),
 
+=======
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+>>>>>>> main
 ]
