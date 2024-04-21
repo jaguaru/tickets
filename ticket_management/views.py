@@ -94,10 +94,10 @@ def upload_cloudinary_image(request):
     if user_is_owner:
 
         if 'ticket_id' not in request.data:
-            return JsonResponse({ 'error': 'No se encontro el ticket_id' }, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({ 'error': 'Ticket_id not found in the request!' }, status=status.HTTP_400_BAD_REQUEST)
 
         if 'images' not in request.data:
-            return JsonResponse({ 'error': 'No se encontraron imagenes en el json' }, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse({ 'error': 'No images found in the request!' }, status=status.HTTP_400_BAD_REQUEST)
 
         max_num_images = ticket.num_images
         num_uploaded_images = ticket.images.count()
