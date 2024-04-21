@@ -313,9 +313,3 @@ Installing PostgreSQL and aditional utilities
 Open a window console and type
 
     $ sudo apt-get install rabbitmq-server
-
-
-
-
-
-
