@@ -53,7 +53,7 @@ def monitoring_ticket_status(request):
             return Response({ 'error': 'The ticket does not exist or has not been found!' }, status=status.HTTP_404_NOT_FOUND)
     
     else:
-        return Response({ 'error': 'No puedes usar este ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
+        return Response({ 'error': 'You do not have permission to view this ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
 
 
 @api_view(['GET'])
