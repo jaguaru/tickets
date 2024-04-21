@@ -2,6 +2,8 @@
 
 TicketApp is a REST API application built with Django. This allows users to upload images asynchronously to the cloud, through ticket management, using the Cloudinary service. The transaction data, Tickets and Images uploaded, are saved in PostgreSQL.
 
+In order to use all the features of this application you must have all the necessary packages installed. In the application installation part you will find the instructions to install everything.
+
 
 # Firt steps:
 
@@ -292,25 +294,25 @@ The first step is to get an application, such as Postman or another similar appl
                     "uploaded_at": "2024-04-17T05:51:49.300646Z"
                 }
             ]
-        } 
+        }
 
+## Install Applications Ubuntu 22.04
 
+### Install PostgreSQL: 
 
+Open a window console and type to refresh local package
 
+    $ sudo apt update
 
+Installing PostgreSQL and aditional utilities
 
+    $ sudo apt install postgresql postgresql-contrib
 
+### Install Celery(RabbitMQ): 
 
+Open a window console and type
 
-
-
-
-
-
-
-
-
-
+    $ sudo apt-get install rabbitmq-server
 
 
 
