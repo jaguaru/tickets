@@ -29,7 +29,7 @@ def create_new_ticket(request):
         ticket = Ticket.objects.create(num_images=num_images, user=user)
         return Response({ 'ticket_id': ticket.id, 'status': ticket.status }, status=status.HTTP_201_CREATED)
     else:
-        return Response({ 'error': 'Número de imágenes no proporcionado' }, status=status.HTTP_400_BAD_REQUEST)
+        return Response({ 'error': 'Number of images not provided.' }, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
