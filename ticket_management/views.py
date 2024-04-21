@@ -109,10 +109,10 @@ def upload_cloudinary_image(request):
             ticket.save()
 
         if ticket.status != 'pending':
-            return Response({ 'error': 'No se pueden subir más imágenes, el ticket ya está completado' }, status=status.HTTP_400_BAD_REQUEST)
+            return Response({ 'error': 'No more images can be uploaded, the ticket is already completed!' }, status=status.HTTP_400_BAD_REQUEST)
 
         if num_uploaded_images >= max_num_images:
-            return Response({ 'error': 'Se ha alcanzado el límite de imágenes para este ticket' }, status=status.HTTP_409_CONFLICT)
+            return Response({ 'error': 'The image limit has been reached for this ticket!' }, status=status.HTTP_409_CONFLICT)
         
         images_list = request.data.get('images')
 
