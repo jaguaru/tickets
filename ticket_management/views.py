@@ -182,7 +182,7 @@ def tickets_paginated(request):
             return Response(ticket_data)
 
         except Ticket.DoesNotExist:
-            return Response({'error': 'No se encontró el ticket para este usuario'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'The ticket does not exist or has not been found!'}, status=status.HTTP_404_NOT_FOUND)
 
     else:
-        return Response({ 'error': 'No puedes ver este ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
+        return Response({ 'error': 'You do not have permission to view this ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
