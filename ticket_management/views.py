@@ -135,10 +135,10 @@ def upload_cloudinary_image(request):
             except Exception as _except:
                 return Response({ 'error': '{}'.format(_except) }, status=status.HTTP_400_BAD_REQUEST)
         
-        return Response({ 'message': 'Las imagenes se subieron correctamente!' }, status=status.HTTP_200_OK)
+        return Response({ 'message': 'The images were uploaded successfully!' }, status=status.HTTP_200_OK)
     
     else:
-        return Response({ 'error': 'No puedes usar este ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
+        return Response({ 'error': 'You do not have permission to view this ticket!' }, status=status.HTTP_401_UNAUTHORIZED)
 
 
 @api_view(['GET'])
