@@ -296,7 +296,7 @@ The first step is to get an application, such as Postman or another similar appl
             ]
         }
 
-## Install Applications Ubuntu 22.04
+## Install Applications on Ubuntu 22.04
 
 ### Install PostgreSQL: 
 
